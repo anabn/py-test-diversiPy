@@ -1,5 +1,5 @@
-from ..shape import Shape
-from ..shape import ShapeType
+from program.shape import Shape
+from program.shapeType import ShapeType
 
 class Square(Shape):
     def __init__(self, side):

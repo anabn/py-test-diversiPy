@@ -1,5 +1,5 @@
-from ..shape import Shape
-from ..shapeType import ShapeType
+from program.shape import Shape
+from program.shapeType import ShapeType
 
 class Rectangle(Shape):
     def __init__(self, length, width):
