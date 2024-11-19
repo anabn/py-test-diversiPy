@@ -6,12 +6,12 @@ class Rectangle(Shape):
         super().__init__(ShapeType.RECTANGLE.value)
         x1, y1 = top_right
         x2, y2 = bottom_left
-        self.length = float(y1) - float(y2)
-        self.width = float(x1) - float(x2)
+        self.__length = abs(float(y1) - float(y2))
+        self.__width = abs(float(x1) - float(x2))
 
     def perimeter(self) -> float:
-        return 2 * (self.length + self.width)
+        return 2 * (self.__length + self.__width)
     
     def area(self) -> float:
-        return self.length * self.width
+        return self.__length * self.__width
     
