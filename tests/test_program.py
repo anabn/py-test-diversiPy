@@ -28,4 +28,3 @@ def test_get_index_value_empty_list():
     param = "circle"
     with pytest.raises(ValueError, match=f"{param} not found in the list."):
         program.controller.get_param_index_value(lst, param)
-
