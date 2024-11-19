@@ -18,3 +18,4 @@ def test_negative_dimensions():
     rect = Rectangle((-1, -1), (1, 1))
     assert rect.area() == 4
     assert rect.perimeter() == 8
+    
