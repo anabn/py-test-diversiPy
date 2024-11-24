@@ -38,4 +38,4 @@ def create_shape_class(shape_data: list):
 
 def run():    
     shape = create_shape_class(split_shape_data(get_info()))
-    print(shape.__str__())
+    print(str(shape))
