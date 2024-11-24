@@ -1,14 +1,21 @@
-from program.shape import Shape
 from program.shapeType import ShapeType
+from program.shape import Shape
+from .rectangle import Rectangle
 
-class Square(Shape):
-    def __init__(self, side:any):
-        super().__init__(ShapeType.SQUARE.value)
-        self.side = float(side)
+class Square(Rectangle):
     
-    def perimeter(self) -> float:
-        return 4 * self.side
+    def __init__(self):
+        pass
     
-    def area(self) -> float:
-        return self.side ** 2
+    def initialise_shape(self, shape_data_str: str) -> "Square":
+        shape_data = shape_data_str.split()
+        side = shape_data[self.get_param_index_value(shape_data, "Side") + 1]
+        default_top_right = (0, 0)
+        default_top_left = (side, side)
+        super().__init__(default_top_right, default_top_left)
+        Shape.__init__(self, ShapeType.SQUARE.value)
+        if float(side) < 0:
+            raise ValueError(f"{side} is negative")
+        
+        return self
     

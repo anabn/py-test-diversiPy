@@ -28,8 +28,7 @@ def create_shape_class(shape_data: list):
         get_radius_value = shape_data[get_param_index_value(shape_data, "radius") + 1]
         return Circle(get_radius_value)
     elif shape_data[0] == ShapeType.SQUARE.value.lower():
-        get_side_value = shape_data[get_param_index_value(shape_data, "side") + 1]
-        return Square(get_side_value)
+        return Square().initialise_shape(" ".join(shape_data))
     elif shape_data[0] == ShapeType.RECTANGLE.value.lower():
         topRight_value = (shape_data[get_param_index_value(shape_data, "TopRight") + 1], shape_data[get_param_index_value(shape_data, "TopRight") + 2])
         bottomLeft_value = (shape_data[get_param_index_value(shape_data, "BottomLeft") + 1], shape_data[get_param_index_value(shape_data, "BottomLeft") + 2])
@@ -39,4 +38,4 @@ def create_shape_class(shape_data: list):
 
 def run():    
     shape = create_shape_class(split_shape_data(get_info()))
-    print(shape.__str__())
+    print(str(shape))
