@@ -8,4 +8,8 @@ class Square(Rectangle):
         default_top_left = (side, side)
         super().__init__(default_top_right, default_top_left)
         self.name = ShapeType.SQUARE.value
+        if side < 0:
+            raise ValueError(f"{side} is negative")
+    
+    
     
