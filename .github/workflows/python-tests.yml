@@ -1,12 +1,13 @@
 name: Python Tests
 
-on:
-  push:
-    branches:
-      - ${{ github.default_branch }} 
-  pull_request:
-    branches:
-      - ${{ github.default_branch }} 
+on: push
+# on:
+#   push:
+#     branches:
+  #     - ${{ github.default_branch }} 
+  # pull_request:
+  #   branches:
+  #     - ${{ github.default_branch }} 
 
 jobs:
   test:
