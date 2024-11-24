@@ -1,14 +1,11 @@
-from program.shape import Shape
 from program.shapeType import ShapeType
+from .rectangle import Rectangle
 
-class Square(Shape):
-    def __init__(self, side:any):
-        super().__init__(ShapeType.SQUARE.value)
-        self.side = float(side)
+class Square(Rectangle):
     
-    def perimeter(self) -> float:
-        return 4 * self.side
-    
-    def area(self) -> float:
-        return self.side ** 2
+    def __init__(self, side: any):
+        default_top_right = (0, 0)
+        default_top_left = (side, side)
+        super().__init__(default_top_right, default_top_left)
+        self.name = ShapeType.SQUARE.value
     
